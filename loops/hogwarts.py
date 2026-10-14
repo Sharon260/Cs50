@@ -1,4 +1,9 @@
-students = ["Harry", "Hermione", "Ron", "Draco", "Luna", "Neville"]
+students = {
+  "Harry": "Gryffindor",
+  "Hermione": "Gryffindor",
+  "Ron": "Gryffindor",
+  "Draco": "Slytherin",
+}
 
-for i in range(len(students)):
-    print(f"Student {i + 1}: {students[i]}")
+for student in students:
+    print(f"{student} is in {students[student]}.")
