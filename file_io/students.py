@@ -1,10 +1,8 @@
-students = []
+import csv
 
-with open ("students.csv") as file:
-  for line in file:
-    name, house = line.rstrip().split(",")
-    student= {"name": name, "house": house}
-    students.append(student)
+name = input("What's your name? ")
+home = input("Where's your home? ")
 
-for student in sorted(students, key=lambda student: student["name"]):
-  print(f"{student['name']} is in {student['house']}")
+with open("students.csv", "a") as file:
+    writer = csv.DictWriter(file, fieldnames=["name", "home"])
+    writer.writerow({"name": name, "home": home})
